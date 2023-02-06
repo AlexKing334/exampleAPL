@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+
+int main() {
+	double y = 3.2;
+	int x = (int)y;		//cast esplicito
+	int q = y;			//cast implicito
+	cout << x << endl;  //3
+	cout<<q<<endl;      //3
+}
