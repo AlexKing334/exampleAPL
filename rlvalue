@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int&& y = 10+5;
+	cout<< y <<endl;    // value y
+	y = y + 12;
+	cout << y << endl;  // value y
+}
