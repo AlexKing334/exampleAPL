@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+class GP {
+public:
+	int x = 0;
+};
+
+class A : virtual public GP {
+public:
+	int getX() {
+		return x;
+	}
+
+};
+class B : virtual public GP {
+public:
+	void setX(int y) {
+		x = y;
+	}
+
+};
+
+class AB : public A,public B {
+public:
+};
+
+int main() {
+	AB ab;
+	ab.setX(10);
+	cout << ab.getX() << endl;	//10
+}
