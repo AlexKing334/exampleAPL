@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+class A {
+	int j=0;
+public:
+	A() {
+		cout << "Default"<< endl;
+	}
+	A(A& a) {
+		int j = a.j;
+		cout << "Copy" << endl;
+	}
+	A(int x) {
+		j = x;
+		cout << "Conversion" << endl;
+	}
+	A(int x, int y) {
+		j = x * y;
+		cout << "With Parameters" << endl;
+	}
+};
+
+int main() {
+	A a;
+	A* a1 = new A(a);
+	A* a2 = new A(3);
+	A* a2 = new A(3,7);
+}
