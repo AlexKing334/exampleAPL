@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+class A {
+public:
+	virtual void print() {
+	cout << "I'm A!" << endl;  // value y
+	}
+};
+
+class B : public A {
+public:
+	void print() override{
+		cout << "I'm B!" << endl;  // value y
+	}
+
+};
+
+int main() {
+	B b;
+	b.print();  // I'm B!
+}
