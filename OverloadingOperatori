@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+
+class Point{
+public:
+	double v[2];
+	 Point(double x, double y) {
+		 v[0] = x;
+		 v[1] = y;
+	}
+
+	 Point& operator + (const Point& p) {
+		 v[0] = p.v[0] + v[0];
+		 v[1] = p.v[1] + v[1];
+		 return *this;
+	 }
+};
+
+
+int main() {
+	Point a(1.0, 1.0);
+	Point b(2.2,3.3);
+	Point c(0.3, 0.2);
+	a = a + b+ c;
+	cout << "X:" << a.v[0] << " Y: " << a.v[1] << endl; // X: 3.5  Y: 4.5
+}
