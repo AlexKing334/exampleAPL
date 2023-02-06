@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+void feed(int &a) {
+	a = a + 10;
+}
+
+int main() {
+	int x = 10;
+	int& y = x;
+	cout<< y <<endl;    // value x
+	cout << &y << endl;  // address x
+	feed(y);
+	cout << y << endl; // value x
+}
