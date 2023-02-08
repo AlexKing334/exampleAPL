@@ -1,0 +1,22 @@
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+
+	go prova()
+	for {
+		time.Sleep(1000 * time.Millisecond)
+		fmt.Println("main")
+	}
+}
+
+func prova() {
+	for {
+		time.Sleep(2000 * time.Millisecond)
+		fmt.Println("goroutine")
+	}
+}
