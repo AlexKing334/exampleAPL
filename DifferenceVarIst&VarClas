@@ -1,0 +1,14 @@
+class Point:
+    x = 10
+    y = 2
+
+    def __init__(self, y):
+        self.x = 2
+        self.y = y
+
+
+a = Point(21)
+b = Point(22)
+Point.y = 20  # Work only if x is inside of class and isn't declared inside init
+print(a.y)
+print(b.y)
