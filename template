@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+template<class T,int n>
+class Pila {
+public:
+	T s[n];
+	int top = -1;
+
+	T Pop() {
+		T t{}; //init. a null template
+		if (top < 0) {
+			cout << "empty" << endl;
+			return t;
+		}
+		else {
+			t = s[top];
+			top--;
+		}
+		return t;
+	}
+
+	void Push(T t) {
+		if (top > n) {
+			cout << "full" << endl;
+			return;
+		}
+		top++;
+		s[top] = t;
+	}
+
+};
+
+
+int main() {
+	Pila<int, 100> pila; // solo statica poiche' si implementa in fase di compilazione
+	cout << pila.Pop() << endl;
+	int x = 3;
+	pila.Push(x);
+	pila.Push(4);
+	cout << pila.Pop() << endl;
+	cout << pila.Pop() << endl;
+}
