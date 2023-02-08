@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+
+class A {
+public:
+	static int x;
+
+	void feed() {
+		x += 10;
+	}
+
+};
+int A::x;
+
+int main() {
+	A a;
+	A b;
+	a.feed();
+	cout << A::x << endl;
+	cout << a.x << endl;
+	cout << b.x << endl;
+}
