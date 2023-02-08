@@ -1,0 +1,26 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	c := make(chan int, 4) // con buffer intendiamo il numero di valori che [ possibile salvare dentro il channel]
+	// e poi queseti valori possono essere letti
+	go g(c)
+	fmt.Println(<-c)
+	fmt.Println(<-c)
+	fmt.Println(<-c)
+	fmt.Println(<-c)
+}
+
+func g(c chan int) {
+
+	c <- 1
+	c <- 2
+	c <- 1
+	c <- 3
+	c <- 3
+	fmt.Println("ciao")
+	close(c)
+}
