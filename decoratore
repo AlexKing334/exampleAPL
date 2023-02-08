@@ -1,0 +1,13 @@
+def nome_decoratore(z):
+    def f_interna():
+        z()
+        print("e sono decorata da interna")
+    return f_interna
+
+
+@nome_decoratore
+def f_esterna():
+    print("sono esterna")
+
+
+f_esterna()
