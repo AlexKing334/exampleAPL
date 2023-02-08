@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+class A {
+	friend class B;			//dich. classe amica
+	friend void feed(A a);  //dich. funz. amica
+private:
+	int x = 10;
+	void stampa(string x) {
+		cout<<x << endl;
+	}
+};
+
+class B {
+private:
+	int x = 10;
+public:
+	void stampa(A a) {
+		cout << "B:"<< a.x << endl; //attributo privato
+		a.stampa("sono B.");		//metodo privato
+	}
+};
+
+void feed(A a) {
+	a.x = a.x + 10;			// attributo privato
+	a.stampa("Sono feed");  //metodo privato
+}
+
+int main() {
+	A a;
+	feed(a);
+	B b;
+	b.stampa(a);
+}
