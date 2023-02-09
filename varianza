@@ -15,7 +15,7 @@ public class Test
         Padre p = new Padre();
         Figlio f = new Figlio();
         Del d1 = f.metodo1; //Caso in cui assegniamo al delegato un metodo con la stessa signature
-        Del d2 = f.metodo2; //Si parla di covarianza quando assegniamo al delegato un metodo che restituisce un tipo più “s c zz ” d q d d g
+        Del d2 = f.metodo2; //Si parla di covarianza quando assegniamo al delegato un metodo che restituisce un tipo più specifico
         Del d3 = f.metodo3; //Si parla di controvarianza quando assegniamo al d g d c “s c zz ” s q ch è richiesto in ingresso dal delegato.
         Del d=d1 + d2 + d3;
         d(f); //si mette il figlio altrimenti non va, vedi virtual
