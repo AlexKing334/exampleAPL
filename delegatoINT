@@ -1,0 +1,33 @@
+using System;
+
+public delegate int Delegato(int a); //dich. delegato
+class A
+{
+    public int stampa(int a)
+    {
+        Console.WriteLine("sono A: " + a);
+        return a;
+    }
+}
+class B
+{
+    public int stampa(int a)
+    {
+        Console.WriteLine("sono B: "+ a);
+        return a;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        A a = new A();
+        B b = new B();
+        Delegato d1 = a.stampa; //ass. delegato
+        Delegato d2 = b.stampa; //ass. delegato
+        Delegato d  = d1 + d2;  //somma delegato
+        int x = d(5); //chiamata delegato
+        Console.WriteLine("sono Main: " + x);
+    }
+}
