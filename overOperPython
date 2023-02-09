@@ -1,0 +1,17 @@
+class Car:
+    def __init__(self, x):
+        self.model = x
+    
+    def print(self):
+        print(self.model)
+
+    def __add__(self, x): 
+        return Car(self.model + x.model)
+
+
+x = Car(10)
+y = Car(3)
+x = x+y 
+# se si elimina def si manifesta il seguente errore
+# add unsupported operand type(s) for +: 'Car' and 'Car'
+x.print()
