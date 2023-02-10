@@ -1,0 +1,46 @@
+using System;
+
+class A : IDisposable
+{
+    // Un flag per verificare se la risorsa è stata già liberata.
+    private bool _disposed = false;
+
+    // Il finalizer, chiamato quando il Garbage Collector raccoglie la risorsa.
+    ~A() => Dispose(false);
+
+    // La firma del metodo Dispose, come richiesto dall'interfaccia IDisposable.
+    public void Dispose() 
+    {
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    // Il metodo che esegue effettivamente la pulizia delle risorse.
+    protected virtual void Dispose(bool disposing)
+    { 
+        if(_disposed) { return; } // Se la risorsa è già stata liberata, esci.
+
+        if(disposing)
+        {
+            // Pulisci eventuali risorse qui, come ad esempio
+            // file aperti o connessioni al database.
+        }
+
+        // Imposta il flag per evitare di liberare la stessa risorsa più volte.
+        _disposed = true; 
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        using (var resource = new A())
+        {
+            // Usa la risorsa qui
+        }
+
+        Console.WriteLine("MyResource object has been disposed.");
+        Console.ReadKey();
+    }
+}
