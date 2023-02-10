@@ -1,0 +1,13 @@
+# creazione tupla
+t = (3, 4, 5)
+# packing
+x, y, z = t
+# stampa
+print("t: ", t, "x:", x, "y:", y, "z:", z,)
+# unpacking
+t = (x+1, y+1, z+1)
+# la tupla si puo' riassegnare, ma i singoli elementi sono immutabili
+# stampa
+print("t: ", t, "x:", x, "y:", y, "z:", z,)
+
+
