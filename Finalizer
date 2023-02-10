@@ -1,0 +1,21 @@
+using System;
+using System.IO;
+
+class ResourceHolder
+{
+    private FileStream fileStream;
+
+    public ResourceHolder(string filePath)
+    {
+        this.fileStream = new FileStream(filePath, FileMode.Open);
+    }
+
+    ~ResourceHolder()
+    {
+        // Clean up code here
+        if (fileStream != null)
+        {
+            fileStream.Close();
+        }
+    }
+}
