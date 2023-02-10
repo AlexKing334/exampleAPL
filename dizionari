@@ -1,0 +1,10 @@
+# creazione dizionario
+diz = {1: 1, "1": 1, 2: "2", "2": "2"}
+# aggiungo elementi al dizionario
+diz["3"] = 3
+diz[3] = "3"
+# elimino elementi dal dizionario
+del diz[1]
+del diz["1"]
+# stampa
+print(diz)
