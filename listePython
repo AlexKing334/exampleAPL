@@ -1,5 +1,5 @@
 # creazione lista
-lista = [3, 4, 5]
+lista = [3, 4, 5,"ciao"]
 # inserimento di un elemento in lista
 lista.append(6)
 # inserimento di un elemento in lista in posti consecutivi
