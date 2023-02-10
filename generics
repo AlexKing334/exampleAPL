@@ -1,0 +1,17 @@
+using System;
+
+class A <T> where T : struct
+{
+   public T value;
+   public  A(T value) {
+        this.value=value;
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        A<int> a = new A<int>(6);
+        Console.WriteLine(a.value);
+    }
+}
