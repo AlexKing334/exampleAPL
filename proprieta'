@@ -1,0 +1,23 @@
+using System;
+
+class A
+{
+    private string name;
+    public string Name { get => name; set => name = value; } //sia di lettura che di scrittura
+
+    private int age;
+    public int Age { get => age; init=> age = value; } //si puo leggere ma si puo settare solo una volta
+
+    private string surname;
+    public string Surname { get; set; } //autoimplementate
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        A a=new A();
+        a.Name= "a";
+        Console.WriteLine(a.Name);
+
+    }
+}
