@@ -1,0 +1,16 @@
+# creazione insieme
+insieme = {3, 4, 5, "ciao", 7}
+# aggiungo elementi nel set
+# no
+insieme.add(3)
+# no
+insieme.add("ciao")
+# si
+insieme.add(10)
+# stampa
+print(insieme)
+# creo lista
+l = [1, 2, 2, 3, 4, 4]
+# si puo assegnare a un set una lista ma i duplicati vengono rimossi
+insieme = set(l)
+print(insieme)
