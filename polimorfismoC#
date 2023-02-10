@@ -1,0 +1,28 @@
+using System;
+
+class A
+{
+   virtual public int stampa(int a)
+    {
+        Console.WriteLine("sono A: " + a);
+        return a;
+    }
+}
+class B : A
+{
+ override public int stampa(int a)
+    {
+        Console.WriteLine("sono B: "+ a);
+        return a;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        A a = new A();
+        B b = new B();
+        b.stampa(4);
+    }
+}
