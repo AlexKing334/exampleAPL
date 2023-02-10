@@ -1,0 +1,13 @@
+# creazione stringa
+string = "01234"
+# stampa
+print(string)
+# è possibile recuperare il valore di un elemento presente nella stringa tramite indice
+# pero' non è possibile la sua modifica, string[2]="a"
+# N.B. gli elementi da cui è composta la stringa non sono char poichè non esistono in python
+print(string[2])
+# una stringa si può riassegnare, cambiandone il riferimento
+string = "ciao"
+# stampa
+print(string)
+
