@@ -1,0 +1,18 @@
+# creazione lista
+lista = [3, 4, 5]
+# inserimento di un elemento in lista
+lista.append(6)
+# inserimento di un elemento in lista in posti consecutivi
+lista.extend([7, 8])
+# inserimento di piu elementi in lista nello stesso posto
+lista.append([7, 8])
+# duplicazione lista per riferimento - modifiche si
+ref_lista = lista
+# duplicazione lista per valore - modifiche no
+copy_list = list(lista)
+copy_list.append(10)
+ref_lista.append(9)
+# stampo lista
+print(lista)
+print(ref_lista)
+print(copy_list)
