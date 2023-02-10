@@ -1,0 +1,37 @@
+using System;
+
+public class Page
+{
+    public string testo;
+    public Page(string testo)
+    {
+        this.testo = testo;
+    }
+
+}
+public class Program
+{
+    static public Page[,] book = new Page[200, 2];
+    public Page this[int page, int volume]
+    {
+        get
+        {
+            return book[page, volume];
+        }
+        set
+        {
+            book[page, volume] = value;
+        }
+    }
+    static void Main()
+    {
+        Page p = new Page("ciao!!");
+    
+        book[199,0] = p;
+        Console.WriteLine(book[199,0].testo);
+        Page p1 = new Page("ciao!!");
+        book[199, 1] = p1;
+        Console.WriteLine(book[199, 1].testo);
+    }
+}
+
