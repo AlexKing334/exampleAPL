@@ -1,0 +1,28 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+
+	p := Point{H{20}, 10}
+	var p2 *Point = new(Point)
+	*p2 = p
+	fmt.Println(p)
+	fmt.Println(p2)
+}
+
+type Point struct {
+	H H
+	A int64
+}
+
+type H struct {
+	v int64
+}
+
+func (p *Point) metodo(z int) int {
+
+	return 0
+}
