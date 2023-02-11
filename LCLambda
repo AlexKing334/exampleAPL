@@ -1,0 +1,7 @@
+# lambda function
+f = lambda a: a*2
+print(f(3))
+# list_comprehension
+fruits = {"mela": "banana", "kiwi":"mela"}
+fruits = {x for x in fruits if "a" in x}
+print(fruits)
