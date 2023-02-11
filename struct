@@ -1,28 +1,32 @@
-package main
+	package main
 
-import (
-	"fmt"
-)
+	import (
+		"fmt"
+	)
 
-func main() {
+	type Point struct{ x, y float64 }
 
-	p := Point{H{20}, 10}
-	var p2 *Point = new(Point)
-	*p2 = p
-	fmt.Println(p)
-	fmt.Println(p2)
-}
+	func (p *Point) M() {
+		fmt.Println("Point")
+	}
+	type Point2 struct{ x, y float64 }
 
-type Point struct {
-	H H
-	A int64
-}
+	func (p *Point2) M() {
+		fmt.Println("Point2")
+	}
 
-type H struct {
-	v int64
-}
-
-func (p *Point) metodo(z int) int {
-
-	return 0
-}
+	type ChildPoint struct {
+		Point
+		Point2
+		nome string
+	}
+	//se non si fa override chiama quella della struct interna
+	//se ci sono metodi con lo stesso nome in due struct derivat
+	//abbiamo il problema dell'ambiguita
+	func (p *ChildPoint) M() { fmt.Println("ChildPoint") }
+	func main() {
+		p1 := Point{1, 2}
+		p1.M()
+		p2 := ChildPoint{Point{1, 2},Point2{1, 2}, "ciao"}
+		p2.M() //chiama il nuovo M
+	}
