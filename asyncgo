@@ -2,25 +2,34 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func main() {
-	c := make(chan int, 4) // con buffer intendiamo il numero di valori che [ possibile salvare dentro il channel]
-	// e poi queseti valori possono essere letti
-	go g(c)
-	fmt.Println(<-c)
-	fmt.Println(<-c)
-	fmt.Println(<-c)
-	fmt.Println(<-c)
+	c := make(chan int)
+	c2 := make(chan int, 1)
+	go metodoS(c)
+	fmt.Println(<-c) //bloccante, aspetta finche non legge un valore sul canale
+	fmt.Println("sbloccata!")
+	go metodoA(c2)
+	fmt.Println("sbloccata!!")
+	time.Sleep(2 * time.Second)
+	//in quelle asincrone il
 }
 
-func g(c chan int) {
-
-	c <- 1
-	c <- 2
-	c <- 1
-	c <- 3
-	c <- 3
-	fmt.Println("ciao")
-	close(c)
+func metodoS(c chan int) {
+	time.Sleep(2 * time.Second)
+	c <- 12 //sbloccante
 }
+
+// continua la sua esezuione fino a quando il canale si riempie
+func metodoA(c chan int) {
+	time.Sleep(2 * time.Second)
+	fmt.Println("inizio!!")
+	c <- 12 //sbloccante // qua si blocca sinc
+	fmt.Println("1!!")
+	c <- 12 //bloccante //qui si blocca l-asinc con buffer 1
+	fmt.Println("2!!")
+}
+
+
