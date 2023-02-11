@@ -1,0 +1,23 @@
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	result := make(chan int)
+	go routine(result)
+
+	fmt.Println("Attendo il risultato dell'elaborazione pesante...")
+	res := <-result //risulta bloccante
+	fmt.Println("Risultato dell'elaborazione pesante:", res)
+}
+
+func routine(result chan int) {
+	fmt.Println("Inizio elaborazione pesante...")
+	// Simulo un'elaborazione pesante che impiega molto tempo
+	time.Sleep(5 * time.Second)
+	result <- 42  //sblocca il main
+	fmt.Println("Elaborazione pesante completata.")
+}
