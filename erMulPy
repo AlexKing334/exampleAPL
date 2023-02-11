@@ -1,0 +1,26 @@
+class Car:
+    # var. istanza
+    vel = 10
+
+    def __init__(self):
+        print("car creata")
+
+
+class Jet:
+    # var. istanza
+    vel = 10
+
+    def __init__(self):
+        print("jet creata")
+
+
+class JetCar(Jet, Car):
+    jcr = 2
+
+
+# chiama costruttore jet
+j = Jet()
+# chiama costruttore car
+c = Car()
+# chiama costruttore jet
+jc = JetCar()  
