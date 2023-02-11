@@ -1,0 +1,11 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	mp := map[int64]string{0: "key", 1: "s"}
+	mp[2] = "d"
+	fmt.Println(mp)
+}
