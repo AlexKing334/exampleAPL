@@ -1,0 +1,28 @@
+class Car:
+    # var. classe - si trovano solo al di fuori dei metodi
+    # var. classe - sono uguali per tutte le istanze
+    vel = 10
+
+    def __init__(self):
+        # var. istanza, cambiano da istanza a istanza
+        # si definiscono dentro i metodi
+        self.x = 10
+        print("car creata")
+
+
+c = Car()
+c1 = Car()
+c2 = Car()
+# la var. vel non è piu di classe per c1
+c1.vel = 23
+# modifico la var. di classe per tutti gli oggetti
+Car.vel = 12
+# creo una variabile unica per l'istanza
+c.z = 20
+# verifico che vel in c e c2 sia stata modificata
+print(c.vel)
+print(c2.vel)
+# 23, perchè non è piu di classe per c1
+print(c1.vel)  
+# leggo variabile di classe
+print(Car.vel)
