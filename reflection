@@ -1,0 +1,14 @@
+class A:
+    x = 3
+
+
+a = A()
+b = a
+x = 0
+# verifico se a è di tipo A // true
+print(isinstance(a, A))
+# verifico se x e a sono dello stesso tipo // false
+print(type(x) == type(a))
+# verifico se puntano allo stesso indirizzo //false, true
+print(a is x)
+print(a is b)
