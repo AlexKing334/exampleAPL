@@ -1,0 +1,43 @@
+package main
+
+import (
+	"fmt"
+)
+
+type Drawable interface {
+	Draw()
+}
+
+// Definizione della struttura "Rectangle"
+type Rect struct {
+	length, width float64
+}
+
+// Implementazione del metodo "Draw" per la struttura "Rect"
+func (r Rect) Draw() {
+	fmt.Println("Rect")
+}
+
+// Definizione della struttura "Circle"
+type Circle struct {
+	radius float64
+}
+
+// Implementazione del metodo "Draw" per la struttura "Circle"
+func (c Circle) Draw() {
+	fmt.Println("Circle")
+}
+
+// Funzione che accetta un tipo che implementa l'interfaccia "Drawable"
+func DrawAll(drawables []Drawable) {
+	for _, drawable := range drawables {
+		drawable.Draw()
+	}
+}
+
+func main() {
+	rect := Rect{10, 20}
+	circ := Circle{5}
+	shapes := []Drawable{rect, circ}
+	DrawAll(shapes)
+}
