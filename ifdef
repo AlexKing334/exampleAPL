@@ -1,0 +1,18 @@
+#include <iostream>
+
+#define A 20    //Si usa una macro perché gli #if vengono valutati in preprocessore
+using namespace std;
+
+int main() {
+#ifdef A    //Qua ci entra se A è definita
+    cout << "def" << endl;
+#endif
+
+#ifndef A    //Qua ci entra se A non è definita
+    cout << "notdef" << endl;
+#endif
+
+#if A>0    //con #if invece ci vuole un'espressione che restituisce un bool
+    cout << "if" << endl;
+#endif
+}
