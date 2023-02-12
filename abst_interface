@@ -1,0 +1,34 @@
+public class Page
+{
+    public string testo;
+    public Page(string testo)
+    {
+        this.testo = testo;
+    }
+
+}
+public class Book
+{
+    public Page[] p=new Page[200];
+    public Page this[int index]
+    {
+        get
+        {
+                return p[index];
+        }
+        set
+        {
+            p[index] = value;
+        }
+    }
+}
+public class Program
+{
+    static void Main()
+    {
+        Page p = new Page("ciao");
+        Book b = new Book();
+        b[199] = p;
+        Console.WriteLine(b[199].testo);
+    }
+}
