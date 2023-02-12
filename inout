@@ -1,0 +1,22 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int inputValue = 5;
+        int outputValue;
+
+        ExampleMethod(inputValue, out outputValue);
+
+        Console.WriteLine("Input value: " + inputValue);
+        Console.WriteLine("Output value: " + outputValue);
+
+        Console.ReadKey();
+    }
+
+    public static void ExampleMethod(in int x, out int y)
+    {
+        y = x * 2;
+    }
+}
