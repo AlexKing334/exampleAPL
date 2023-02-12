@@ -1,0 +1,29 @@
+#include <iostream>
+
+class Base {
+   public:
+      virtual void foo() {
+         std::cout << "Base::foo" << std::endl;
+      }
+};
+
+class Derived : public Base {
+   public:
+      virtual void foo() {
+         std::cout << "Derived::foo" << std::endl;
+      }
+};
+
+int main() {
+   Base *b = new Derived();
+   Derived *d = dynamic_cast<Derived*>(b);
+
+   if (d) {
+      d->foo();
+   }
+   else {
+      std::cout << "Cast failed" << std::endl;
+   }
+
+   return 0;
+}
