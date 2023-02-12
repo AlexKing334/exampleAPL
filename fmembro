@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+
+class A {
+public:
+	int x=0;
+	void feed();
+};
+
+void A::feed() {
+	this->x=this->x + 10;
+}
+
+int main() {
+	A a;
+	a.feed();
+	a.feed();
+	cout<<a.x<<endl;
+}
